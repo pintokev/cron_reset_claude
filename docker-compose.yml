@@ -1,0 +1,12 @@
+services:
+  claude-ping:
+    build: .
+    container_name: claude-ping
+    restart: unless-stopped
+    init: true
+    env_file: .env
+    logging:
+      driver: json-file
+      options:
+        max-size: "1m"
+        max-file: "3"
